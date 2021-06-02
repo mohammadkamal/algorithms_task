@@ -12,7 +12,7 @@ class _ActionWidgetsState extends State<ActionWidgets> {
   Widget _auctions() {
     return Container(
       padding: EdgeInsets.all(20),
-      width: MediaQuery.of(context).size.width / 3,
+      width: MediaQuery.of(context).size.width / 2.3,
       height: MediaQuery.of(context).size.height / 6,
       decoration: _decoration,
       child: Column(
@@ -28,7 +28,7 @@ class _ActionWidgetsState extends State<ActionWidgets> {
   Widget _finder() {
     return Container(
       padding: EdgeInsets.all(20),
-      width: MediaQuery.of(context).size.width / 3,
+      width: MediaQuery.of(context).size.width / 2.3,
       height: MediaQuery.of(context).size.height / 6,
       decoration: _decoration,
       child: Column(
@@ -40,7 +40,8 @@ class _ActionWidgetsState extends State<ActionWidgets> {
 
   Widget _myCars() {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.all(20),
+      width: MediaQuery.of(context).size.width / 1.1,
       height: MediaQuery.of(context).size.height / 6,
       decoration: _decoration,
       child: Column(

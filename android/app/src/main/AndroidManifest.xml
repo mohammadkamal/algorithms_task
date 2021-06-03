@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.algorithms_task">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="algorithms_task"
         android:icon="@mipmap/ic_launcher">

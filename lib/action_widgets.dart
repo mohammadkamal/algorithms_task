@@ -6,15 +6,28 @@ class ActionWidgets extends StatefulWidget {
 }
 
 class _ActionWidgetsState extends State<ActionWidgets> {
-  final _decoration = BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(5)), color: Colors.white);
+
+  BoxDecoration _boxDecoration()
+  {
+    return BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.5),
+          spreadRadius: 2,
+          blurRadius: 7,
+          offset: Offset(0, 3),
+        )
+      ]);
+  }
 
   Widget _auctions() {
     return Container(
       padding: EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 2.3,
-      height: MediaQuery.of(context).size.height / 6,
-      decoration: _decoration,
+      height: 100,
+      decoration: _boxDecoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -29,8 +42,8 @@ class _ActionWidgetsState extends State<ActionWidgets> {
     return Container(
       padding: EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 2.3,
-      height: MediaQuery.of(context).size.height / 6,
-      decoration: _decoration,
+      height: 100,
+      decoration: _boxDecoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Icon(Icons.search), Text('Finder'.toUpperCase())],
@@ -40,10 +53,11 @@ class _ActionWidgetsState extends State<ActionWidgets> {
 
   Widget _myCars() {
     return Container(
+      margin: EdgeInsets.only(top: 20),
       padding: EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 1.1,
-      height: MediaQuery.of(context).size.height / 6,
-      decoration: _decoration,
+      height: 100,
+      decoration: _boxDecoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class HomePageContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
+    return ListView(shrinkWrap: true, children: [
       CarsGallery(),
       AuctionSlider(),
       ActionWidgets(),

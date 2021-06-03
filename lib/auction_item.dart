@@ -25,12 +25,17 @@ class _AuctionItemState extends State<AuctionItem> {
 
   void initState() {
     super.initState();
-    _timeDiff = widget.inDueTime.difference(_nowTime);
+    setState(() {
+      _timeDiff = widget.inDueTime.difference(_nowTime);
+    });
   }
 
   Widget _imageSection() {
     return Container(
-      child: widget.image,
+      alignment: Alignment.topLeft,
+      child: FittedBox(child: widget.image, fit: BoxFit.fill),
+      width: 300,
+      height: 300,
     );
   }
 
@@ -87,6 +92,7 @@ class _AuctionItemState extends State<AuctionItem> {
               style: TextStyle(color: Color(0xFFFFCE00)),
             ),
             Container(
+              padding: EdgeInsets.only(left:5,right: 5),
                 child: Text(
                     '${_timeDiff.inDays}d : ${_timeDiff.inHours - _timeDiff.inDays * 24}h : ${_timeDiff.inMinutes - _timeDiff.inHours * 60}m'),
                 decoration: BoxDecoration(
@@ -98,33 +104,30 @@ class _AuctionItemState extends State<AuctionItem> {
 
   Widget _infoSection() {
     return Container(
-      margin: EdgeInsets.only(bottom: 55, left: 8, right: 8),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10)),
-          color: Color(0xFF071333)),
-      alignment: Alignment.center,
-      height: 120,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [_carSpecs(), _timeSection()],
-      ),
-    );
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(10),
+                bottomLeft: Radius.circular(10)),
+            color: Color(0xFF071333)),
+        width: 285,
+        height: 150,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [_carSpecs(), _timeSection()],
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children: [
-          _imageSection(),
-          Align(
-            child: _infoSection(),
+        width: 300,
+        height: 300,
+        child: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Stack(
             alignment: Alignment.bottomCenter,
-          )
-        ],
-      ),
-    );
+            children: [_imageSection(), _infoSection()],
+          ),
+        ));
   }
 }

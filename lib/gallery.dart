@@ -10,13 +10,15 @@ class CarsGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-        options: CarouselOptions(height: 300),
+        options: CarouselOptions(height: 200),
         items: _images
             .map((e) => Builder(
-                builder: (context) => Container(
+                builder: (context) => 
+                Container(
                       width: MediaQuery.of(context).size.width,
+                      height: 200,
                       margin: EdgeInsets.symmetric(horizontal: 5),
-                      child: e,
+                      child: FittedBox(child: e,)
                     )))
             .toList());
   }

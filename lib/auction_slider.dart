@@ -17,11 +17,11 @@ class AuctionSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-        options: CarouselOptions(height: 300),
+        options:
+            CarouselOptions(height: 400),
         items: _auctionItems
             .map((e) => Builder(
                 builder: (context) => Container(
-                      width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.symmetric(horizontal: 5),
                       child: e,
                     )))
